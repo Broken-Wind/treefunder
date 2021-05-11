@@ -8,8 +8,7 @@
 			Join our mission to preserve the American Green.
 		</p>
           <p>
-            <a href="#" class="btn btn-primary my-2">Sign up</a>
-            <a href="#" class="btn btn-secondary my-2">Sign in</a>
+            <a href="<%= new_listing_path %>" class="btn btn-primary my-2">New Listing</a>
           </p>
         </div>
       </section>
@@ -21,7 +20,7 @@
 		  	<% @listings.each do |listing| %>
             <div class="col-md-4">
               <div class="card mb-4 box-shadow">
-                <img class="card-img-top" src="<%= image_url('treesources.jpg') %>" alt="Card image cap">
+                <img class="card-img-top" src="<%= listing.image %>" alt="Card image cap">
                 <div class="card-body">
 					<h4><%= listing.title %></h4>
                   <p class="card-text"><%= listing.tagline %></p>

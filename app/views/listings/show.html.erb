@@ -6,7 +6,7 @@
 		<div class="row">
 			<div class="col-md-4">
 				<div class="card mb-4 box-shadow">
-					<img class="card-img-top" src="<%= image_url('treesources.jpg') %>" alt="Card image cap">
+					<img class="card-img-top" src="<%= @listing.image %>" alt="Card image cap">
 				</div>
 			</div>
 			<div class="col-md-8">
@@ -24,6 +24,14 @@
 				</div>
 			</div>
 		</div>
+		
+
+		<ul>
+		<li><%= link_to "Edit", edit_listing_path(@listing) %></li>
+		<li><%= link_to "Destroy", listing_path(@listing),
+						method: :delete,
+						data: { confirm: "Are you sure?" } %></li>
+		</ul>
 	</div>
 	</div>
 

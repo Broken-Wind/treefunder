@@ -1,0 +1,47 @@
+<%= form_with model: listing do |form| %>
+	<div>
+		<%= form.label :title %><br>
+		<%= form.text_field :title %><br>
+		<% listing.errors.full_messages_for(:title).each do |message| %>
+			<div><%= message %></div>
+		<% end %>
+	</div>
+	<div>
+		<%= form.label :tagline %><br>
+		<%= form.text_field :tagline %><br>
+		<% listing.errors.full_messages_for(:tagline).each do |message| %>
+			<div><%= message %></div>
+		<% end %>
+	</div>
+	<div>
+		<%= form.label :description %><br>
+		<%= form.text_area :description %><br>
+		<% listing.errors.full_messages_for(:description).each do |message| %>
+			<div><%= message %></div>
+		<% end %>
+	</div>
+	<div>
+		<%= form.label :image %><br>
+		<%= form.file_field :image, accept: 'image/png, image/gif, image/jpg' %><br>
+		<% listing.errors.full_messages_for(:image).each do |message| %>
+			<div><%= message %></div>
+		<% end %>
+	</div>
+	<div>
+		<%= form.label :investment_goal %><br>
+		<%= form.number_field :investment_goal %><br>
+		<% listing.errors.full_messages_for(:investment_goal).each do |message| %>
+			<div><%= message %></div>
+		<% end %>
+	</div>
+	<div>
+		<%= form.label :valuation %><br>
+		<%= form.number_field :valuation %><br>
+		<% listing.errors.full_messages_for(:valuation).each do |message| %>
+			<div><%= message %></div>
+		<% end %>
+	</div>
+	<div>
+		<%= form.submit %>
+	</div>
+<% end %>
