@@ -9,7 +9,12 @@ class ListingsController < ApplicationController
 		@listing = Listing.new
 	end
   	def create
+		uploaded_file = params[:listing][:image]
+		File.open(Rails.root.join('public', 'images', uploaded_file.original_filename), 'wb') do |file|
+		  file.write(uploaded_file.read)
+		end
 		@listing = Listing.new(listing_params)
+		@listing[:image] = 'public/images/' + uploaded_file.original_filename
 		if @listing.save
 			redirect_to @listing
 		else
