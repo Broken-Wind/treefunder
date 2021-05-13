@@ -24,9 +24,17 @@
 				</div>
 			</div>
 		</div>
+
+		<h2>Investments</h2>
+		<ul>
+			<% for investment in @listing.investments %>
+				<li><%= investment.investor.name %> - <%= investment.amount %></li>
+			<% end %>
+		</ul>
 		
 
 		<ul>
+		<li><%= link_to "Invest in " + @listing.title, new_listing_investment_path(@listing) %></li>
 		<li><%= link_to "Edit", edit_listing_path(@listing) %></li>
 		<li><%= link_to "Destroy", listing_path(@listing),
 						method: :delete,
